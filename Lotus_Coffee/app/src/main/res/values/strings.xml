@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">LotusCoffeeApp</string>
+    <string name="app_name">Lotus Coffee</string>
+    <string name="title_activity_main">Trang chủ</string>
+    <string name="title_activity_order">Hóa đơn</string>
+    <string name="hoa_don">Hóa đơn:</string>
+
 </resources>
