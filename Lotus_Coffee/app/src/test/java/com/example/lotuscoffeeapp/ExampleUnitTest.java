@@ -1,4 +1,4 @@
-package com.example.hacun.lotus_coffee;
+package com.example.lotuscoffeeapp;
 
 import org.junit.Test;
 

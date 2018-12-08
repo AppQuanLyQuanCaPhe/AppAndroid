@@ -1,4 +1,4 @@
-package com.example.hacun.lotus_coffee;
+package com.example.lotuscoffeeapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.hacun.lotus_coffee", appContext.getPackageName());
+        assertEquals("com.example.lotuscoffeeapp", appContext.getPackageName());
     }
 }
