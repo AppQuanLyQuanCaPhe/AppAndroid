@@ -36,7 +36,11 @@ public class MainActivity extends AppCompatActivity {
         grdvBan.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(MainActivity.this,OrderActivity.class));
+                Intent intent=new Intent(MainActivity.this,OrderActivity.class);
+                Bundle bundle=new Bundle();
+                bundle.putString("BAN",ban.get(position));
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
