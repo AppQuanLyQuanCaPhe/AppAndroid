@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class ThucDonAdapter extends BaseAdapter {
@@ -59,7 +60,7 @@ public class ThucDonAdapter extends BaseAdapter {
         }
         ThucDon mon=list.get(position);
         holder.tvTenMon.setText(mon.getTenMon());
-        holder.tvGia.setText(mon.getGia());
+        holder.tvGia.setText("Giá: "+mon.getGia()+"vnđ");
         holder.imgHinh.setImageResource(mon.getHinhAnh());
 
         return view;

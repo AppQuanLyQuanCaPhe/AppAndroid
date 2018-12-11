@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageMon"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Tên Món"
-        android:textSize="25dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:importantForAutofill="auto"
         app:layout_constraintStart_toEndOf="@+id/imageMon"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,8 +32,7 @@
         android:id="@+id/textViewGia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="8dp"
         android:text="Giá"
         android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/imageMon"

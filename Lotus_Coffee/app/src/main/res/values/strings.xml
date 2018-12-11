@@ -3,5 +3,6 @@
     <string name="title_activity_main">Trang chủ</string>
     <string name="title_activity_order">Hóa đơn</string>
     <string name="hoa_don">Hóa đơn:</string>
+    <string name="title_activity_thanh_toan">Thanh toán</string>
 
 </resources>

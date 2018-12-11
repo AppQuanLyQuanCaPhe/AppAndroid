@@ -1,11 +1,14 @@
 package com.example.lotuscoffeeapp;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -16,9 +19,11 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String DATABASE_NAME="QuanLyQuanCafe.sqlite";
     GridView grdvBan;
-    List<String> ban;
+    List<BAN> BanList;
     GridViewBanAdapter adapter;
+    SQLiteDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        database=Database.initDatabase(this,DATABASE_NAME);
+
         grdvBan=(GridView) findViewById(R.id.gridViewBan);
-        ban=new ArrayList<>();
+        BanList=new ArrayList<>();
         getdataBan();
-        adapter=new GridViewBanAdapter(this,ban);
+        getTrangThai();
+        adapter=new GridViewBanAdapter(this,BanList);
         grdvBan.setAdapter(adapter);
 
         grdvBan.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -38,17 +46,43 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent=new Intent(MainActivity.this,OrderActivity.class);
                 Bundle bundle=new Bundle();
-                bundle.putString("BAN",ban.get(position));
+                bundle.putInt("MABAN",position+1);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
+        Log.d("MainActivity","===ONCREATE===");
+    }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        getTrangThai();
+        adapter.notifyDataSetChanged();
+        Log.d("MainActivity","===ONRESTART===");
+    }
+
+    private void getTrangThai() {
+        Cursor cursorTT = database.rawQuery("select MaBan from TamTinh group by MaBan", null);
+        while (cursorTT.moveToNext()) {
+            for (int i=0;i<BanList.size();i++) {
+                if (cursorTT.getInt(0) == BanList.get(i).getMaBan()) {
+                    BanList.get(i).setTrangThai(1);
+                }
+            }
+        }
+        cursorTT.close();
     }
 
     private void getdataBan() {
-        for (int i=0;i<10;i++){
-            ban.add("Bàn "+(i+1));
+        Cursor cursor=database.rawQuery("Select * from Ban",null);
+        while (cursor.moveToNext()){
+            BAN ban=new BAN();
+            ban.setMaBan(cursor.getInt(0));
+            ban.setTenBan("Bàn "+ban.getMaBan());
+            BanList.add(ban);
         }
+        cursor.close();
     }
+
 }
