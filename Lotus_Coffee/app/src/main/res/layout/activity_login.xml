@@ -1,42 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:stretchColumns="0"
-    android:background="#ffffff">
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:stretchColumns="1">
 
-    <TableRow>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@color/colorPrimary" />
+
+    <TableRow
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:background="@color/colorPrimary"/>
-    </TableRow>
-    <TableRow>
-        <EditText
-            android:hint="  Nhập Email"
+            android:id="@+id/imageView2"
+            android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_width="match_parent"
-            android:background="@drawable/round"/>
-    </TableRow>
-    <TableRow>
+            app:srcCompat="@drawable/ic_person_black_24dp" />
         <EditText
-            android:hint="  Mật khẩu"
+            android:id="@+id/editTextTenDangNhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nhập tên đăng nhâp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_width="match_parent"
-            android:background="@drawable/round"/>
+            android:src="@drawable/ic_vpn_key_black_24dp"/>
+
+        <EditText
+            android:id="@+id/editTextMatKhau"
+            android:inputType="textPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Mật khẩu" />
     </TableRow>
-    <TableRow>
-        <Button
-            android:text="Đăng nhập"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="70dp"
-            android:layout_marginTop="10dp"/>
-    </TableRow>
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_marginTop="16dp"
+        android:text="Đăng nhập" />
+
+    <TextView
+        android:id="@+id/textViewQuenMK"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quen_mat_khau"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:textColor="#0037ff" />
 </TableLayout>

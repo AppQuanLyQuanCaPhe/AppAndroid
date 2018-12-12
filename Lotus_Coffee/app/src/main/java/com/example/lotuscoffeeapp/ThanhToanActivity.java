@@ -31,6 +31,7 @@ public class ThanhToanActivity extends AppCompatActivity {
     Button btnThanhToan,btnHuy;
     SQLiteDatabase database;
     String Ngay;
+    TaiKhoan tk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class ThanhToanActivity extends AppCompatActivity {
         MaBan=bundle.getInt("MABAN");
         tvban.setText(MaBan+"");
         HoaDonList= (List<ThucDon>) bundle.getSerializable("HOADON");
+        tk= (TaiKhoan) bundle.getSerializable("TAIKHOAN");
 
         adapter=new ThucDonAdapter(this,R.layout.mon_item,HoaDonList);
         lvHoaDon.setAdapter(adapter);
@@ -85,10 +87,13 @@ public class ThanhToanActivity extends AppCompatActivity {
                         contentValues.put("NgayLap",Ngay);
                         contentValues.put("ThanhTien",Tong);
 
-                        database.insert("HoaDon",null,contentValues);
+                        //database.insert("HoaDon",null,contentValues);
                         Toast.makeText(ThanhToanActivity.this, "Thanh toán thành công!", Toast.LENGTH_SHORT).show();
 
                         Intent intent1 = new Intent(ThanhToanActivity.this, MainActivity.class);
+                        Bundle bundle1=new Bundle();
+                        bundle1.putSerializable("TAIKHOAN",tk);
+                        intent1.putExtras(bundle1);
                         startActivity(intent1);
                     }
                 });
@@ -110,4 +115,8 @@ public class ThanhToanActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
 }

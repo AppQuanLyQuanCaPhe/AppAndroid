@@ -36,7 +36,8 @@ public class OrderActivity extends AppCompatActivity {
     TextView tvBan;
     SQLiteDatabase database;
     ArrayList<String> LoaiList,MonList,ToppingList,DoAnList;
-    List<ThucDon> ThucdonList,HoaDonList,HoaDonDau;
+    List<ThucDon> ThucdonList,HoaDonList;
+    TaiKhoan tk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,7 @@ public class OrderActivity extends AppCompatActivity {
         Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
         MaBan=bundle.getInt("MABAN");
+        tk= (TaiKhoan) bundle.getSerializable("TAIKHOAN");
         tvBan.setText(MaBan+"");
 
         ThucdonList=new ArrayList<>();
@@ -85,6 +87,7 @@ public class OrderActivity extends AppCompatActivity {
                 Bundle bundlett=new Bundle();
                 bundlett.putInt("MABAN",MaBan);
                 bundlett.putSerializable("HOADON", (Serializable) HoaDonList);
+                bundlett.putSerializable("TAIKHOAN",tk);
                 intentThanhToan.putExtras(bundlett);
                 startActivity(intentThanhToan);
             }

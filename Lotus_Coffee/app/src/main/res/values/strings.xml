@@ -4,5 +4,5 @@
     <string name="title_activity_order">Hóa đơn</string>
     <string name="hoa_don">Hóa đơn:</string>
     <string name="title_activity_thanh_toan">Thanh toán</string>
-
+    <string name="quen_mat_khau"><u>Quên mật khẩu</u></string>
 </resources>
