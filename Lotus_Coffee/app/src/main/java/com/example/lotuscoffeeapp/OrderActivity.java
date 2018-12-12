@@ -24,6 +24,7 @@ import android.widget.Toast;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class OrderActivity extends AppCompatActivity {
 
@@ -113,12 +114,16 @@ public class OrderActivity extends AppCompatActivity {
     }
 
     private void getDataHoaDon(int i) {
+        Random r=new Random();
+        int[] hinhanh={R.drawable.hinh1,R.drawable.hinh2,R.drawable.hinh3,R.drawable.hinh4};
         Cursor cursor=database.rawQuery("SELECT t.MaMon,t.TenMon,t.Gia,t.AnhMon FROM ThucDon t,TamTinh tt Where t.MaMon=tt.MaMon AND tt.MaBan="+i,null);
         while (cursor.moveToNext()){
             ThucDon td=new ThucDon();
             td.setMaMon(cursor.getInt(0));
             td.setTenMon(cursor.getString(1));
             td.setGia(cursor.getString(2));
+            int hinh=r.nextInt(4);
+            td.setHinhAnh(hinhanh[hinh]);
             HoaDonList.add(td);
         }
     }

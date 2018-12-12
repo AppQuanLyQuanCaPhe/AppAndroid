@@ -4,16 +4,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,11 +31,6 @@ public class MainActivity extends AppCompatActivity {
         database=Database.initDatabase(this,DATABASE_NAME);
 
         grdvBan=(GridView) findViewById(R.id.gridViewBan);
-        BanList=new ArrayList<>();
-        getdataBan();
-        getTrangThai();
-        adapter=new GridViewBanAdapter(this,BanList);
-        grdvBan.setAdapter(adapter);
 
         grdvBan.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -55,11 +46,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onRestart() {
-        super.onRestart();
+    protected void onStart() {
+        super.onStart();
+        BanList=new ArrayList<>();
+        getdataBan();
         getTrangThai();
-        adapter.notifyDataSetChanged();
-        Log.d("MainActivity","===ONRESTART===");
+        adapter=new GridViewBanAdapter(this,BanList);
+        grdvBan.setAdapter(adapter);
+        Log.d("MainActivity","===ONSTART===");
     }
 
     private void getTrangThai() {

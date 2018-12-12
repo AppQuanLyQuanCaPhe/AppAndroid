@@ -36,10 +36,10 @@
         android:id="@+id/listViewHoaDon"
         android:layout_width="match_parent"
         android:layout_height="448dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="-1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
