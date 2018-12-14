@@ -8,11 +8,30 @@
     android:orientation="vertical"
     android:stretchColumns="1">
 
+
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
         android:background="@color/colorPrimary" />
 
+    <TableRow
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@android:drawable/ic_dialog_email" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_email" />
+    </TableRow>
     <TableRow
         android:layout_marginTop="8dp"
         android:layout_width="wrap_content"
@@ -52,16 +71,17 @@
     <Button
         android:id="@+id/buttonLogin"
         android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"
         android:text="Đăng nhập" />
 
     <TextView
         android:id="@+id/textViewQuenMK"
-        android:layout_marginTop="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/quen_mat_khau"
-        android:textStyle="italic"
+        android:layout_marginTop="8dp"
         android:gravity="center"
+        android:text="@string/quen_mat_khau"
+        android:textColor="#0037ff"
         android:textSize="15dp"
-        android:textColor="#0037ff" />
+        android:textStyle="italic" />
 </TableLayout>

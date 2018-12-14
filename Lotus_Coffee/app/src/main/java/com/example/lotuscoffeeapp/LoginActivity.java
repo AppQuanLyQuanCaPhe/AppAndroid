@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText edtTenDangNhap,edtMatKhau;
+    EditText edtTenDangNhap,edtMatKhau,edtEmail;
     TextView tvQuenMatKhau;
     Button btnDangNhap;
     SQLiteDatabase database;
@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtTenDangNhap=(EditText) findViewById(R.id.editTextTenDangNhap);
         edtMatKhau=(EditText) findViewById(R.id.editTextMatKhau);
         btnDangNhap=(Button) findViewById(R.id.buttonLogin);
@@ -35,7 +36,8 @@ public class LoginActivity extends AppCompatActivity {
         tvQuenMatKhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginActivity.this, "Tính năng đang phát triển", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(LoginActivity.this,ResetPasswordActivity.class);
+                startActivity(intent);
             }
         });
         btnDangNhap.setOnClickListener(new View.OnClickListener() {

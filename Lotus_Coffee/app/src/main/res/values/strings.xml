@@ -6,4 +6,9 @@
     <string name="title_activity_thanh_toan">Thanh toán</string>
     <string name="quen_mat_khau"><u>Quên mật khẩu</u></string>
     <string name="title_admin">TRANG CHỦ</string>
+    
+    //reset password
+    <string name="forgot_password_msg">Chúng tôi cần Email đã đăng ký của bạn để gửi cho bạn hướng dẫn đặt lại mật khẩu.</string>
+    <string name="hint_email">Email</string>
+    <string name="btn_reset_password">Khôi phục mật khẩu</string>
 </resources>
