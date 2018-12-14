@@ -52,14 +52,14 @@ public class LoginActivity extends AppCompatActivity {
                     //Kết thúc*/
 
                     //Xoa khi release
-                    int kt=1;
+                    int kt=0;
                     tk=new TaiKhoan();
                     tk.setTendangnhap("NV_1");
                     tk.setMatkhau("hahahha");
                     tk.setManv(4);
                     tk.setMachucvu("NVPV");
-                    Log.d("LoginActivity","KET QUA DANG NHAP: "+kt);
                     //Kết thúc
+                    Log.d("LoginActivity","KET QUA DANG NHAP: "+kt);
                     switch (kt){
                         case 0:
                             Intent intent=new Intent(LoginActivity.this,MainAdminActivity.class);
