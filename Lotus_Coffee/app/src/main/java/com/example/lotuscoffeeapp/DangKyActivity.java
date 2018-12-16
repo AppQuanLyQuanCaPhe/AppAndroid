@@ -53,6 +53,7 @@ public class DangKyActivity extends AppCompatActivity {
                 String ReMK = edtReMK.getText().toString();
                 String NS = edtNS.getText().toString();
                 String CV = "";
+                String test;
                 if(rdNV.isChecked())
                 {
                     CV = "NVPV";
@@ -70,9 +71,14 @@ public class DangKyActivity extends AppCompatActivity {
                     db.insert("NhanVien", null, valu);
 
                     int ma = -1 ;
-                    Cursor cursor=db.rawQuery("SELECT * FROM  NhanVien WHERE SDT="+SDT+" AND TenNV ="+TenNV,null);
+                    Cursor cursor = db.rawQuery("select * from  NhanVien where SDT="+SDT,null);
 
-                    ma = cursor.getInt(cursor.getColumnIndex("MaNV"));
+
+                    while (cursor.moveToNext()) {
+                        test = cursor.getString(0);
+                        ma = Integer.parseInt(test);
+                    }
+
 
                     ContentValues va = new ContentValues();
                     va.put("TK",TK);
@@ -83,6 +89,8 @@ public class DangKyActivity extends AppCompatActivity {
                     db.insert("TaiKhoan", null, va);
 
                     Toast.makeText(DangKyActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                    // chuyển sang trang xem Nhân viên (ghi sau )
+                    
                 }
                 else
                 {
