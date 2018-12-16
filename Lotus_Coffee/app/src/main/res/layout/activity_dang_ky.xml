@@ -29,7 +29,7 @@
             android:id="@+id/editTenNV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+
             android:hint="Tên Nhân viên" />
     </TableRow>
     <TableRow
@@ -50,7 +50,7 @@
             android:id="@+id/editSDT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:inputType="phone"
             android:hint="Số điện thoại" />
     </TableRow>
     <TableRow
@@ -71,7 +71,7 @@
             android:id="@+id/editNS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:inputType="date"
             android:hint="Năm sinh" />
     </TableRow>
     <TableRow
