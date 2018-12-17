@@ -21,16 +21,13 @@ public class MainAdminActivity extends Activity {
         Bundle bundleLogin=intentLogin.getExtras();
         tk=new TaiKhoan();
         tk= (TaiKhoan) bundleLogin.getSerializable("TAIKHOAN");
-        Toast.makeText(this, ""+tk.getTendangnhap()+" "+tk.getMachucvu()+" "+tk.getManv(), Toast.LENGTH_SHORT).show();
         grlMain=(GridLayout) findViewById(R.id.mainGrid);
         setSingleEvent(grlMain);
 
     }
 
     private void setSingleEvent(GridLayout grlMain) {
-        //Loop all child item of Main Grid
         for (int i = 0; i < grlMain.getChildCount(); i++) {
-            //You can see , all child item is CardView , so we just cast object to CardView
             CardView cardView = (CardView) grlMain.getChildAt(i);
             final int finalI = i;
             cardView.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +46,6 @@ public class MainAdminActivity extends Activity {
                             startActivity(intent1);
                             break;
                         case 2:
-                            Toast.makeText(MainAdminActivity.this, "Tính năng đang phát triển", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(MainAdminActivity.this,Update_TD_Activity.class));
                             break;
                         case 3:

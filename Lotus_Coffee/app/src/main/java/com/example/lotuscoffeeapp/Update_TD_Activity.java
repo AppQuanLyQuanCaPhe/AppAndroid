@@ -134,7 +134,6 @@ public class Update_TD_Activity extends AppCompatActivity {
     }
 
     private void CapNhatHinhAnh() {
-        // R.drawable.cavienchien,R.drawable.xoichienphong};
         GetImageID();
         for(int i=0;i<ThucDonList.size();i++){
             ContentValues values=new ContentValues();

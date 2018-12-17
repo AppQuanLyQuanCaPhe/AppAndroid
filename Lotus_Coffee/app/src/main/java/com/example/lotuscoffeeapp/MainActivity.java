@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundleLogin=intentLogin.getExtras();
         tk=new TaiKhoan();
         tk= (TaiKhoan) bundleLogin.getSerializable("TAIKHOAN");
-        Toast.makeText(this, ""+tk.getTendangnhap()+" "+tk.getMachucvu()+" "+tk.getManv(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+tk.getTendangnhap()+" "+tk.getMachucvu()+" "+tk.getManv(), Toast.LENGTH_SHORT).show();
 
         grdvBan=(GridView) findViewById(R.id.gridViewBan);
 
@@ -133,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void CapNhatHinhAnh() {
-        // R.drawable.cavienchien,R.drawable.xoichienphong};
         GetImageID();
         GetThucDonList();
         for(int i=0;i<ThucDonList.size();i++){

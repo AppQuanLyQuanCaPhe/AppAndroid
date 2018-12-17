@@ -39,8 +39,8 @@
             android:name=".UpdateNVActivity"
             android:label="@string/title_activity_update_nv"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
+        <activity android:name=".Update_TD_Activity"/>
     </application>
 
 </manifest>

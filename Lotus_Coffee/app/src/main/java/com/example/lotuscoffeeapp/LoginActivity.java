@@ -1,5 +1,6 @@
 package com.example.lotuscoffeeapp;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,6 +14,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity {
 
     EditText edtTenDangNhap,edtMatKhau,edtEmail;
@@ -20,6 +24,8 @@ public class LoginActivity extends AppCompatActivity {
     Button btnDangNhap;
     SQLiteDatabase database;
     TaiKhoan tk;
+    List<ThucDon> ThucDonList;
+    ArrayList<Integer> ImageID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,23 +49,21 @@ public class LoginActivity extends AppCompatActivity {
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //if(edtTenDangNhap.getText().toString().equals("") || edtMatKhau.getText().toString().equals("")){
-                if(false){
+                if(edtTenDangNhap.getText().toString().equals("") || edtMatKhau.getText().toString().equals("")){
                     Toast.makeText(LoginActivity.this, "Vui lòng nhập tên đăng nhập và mật khẩu.", Toast.LENGTH_SHORT).show();
                 } else{
                     String tendangnhap=edtTenDangNhap.getText().toString();
                     String matkhau=edtMatKhau.getText().toString();
-                    /*//Phần chính
+
                     int kt=KiemTraDangNhap(tendangnhap,matkhau);
-                    //Kết thúc*/
 
                     //Xoa khi release
-                    int kt=0;
+                    /*int kt=0;
                     tk=new TaiKhoan();
                     tk.setTendangnhap("NV_1");
                     tk.setMatkhau("hahahha");
                     tk.setManv(4);
-                    tk.setMachucvu("NVPV");
+                    tk.setMachucvu("NVPV");*/
                     //Kết thúc
                     Log.d("LoginActivity","KET QUA DANG NHAP: "+kt);
                     switch (kt){
@@ -107,6 +111,4 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
-
-
 }

@@ -8,6 +8,16 @@
     android:orientation="vertical"
     android:stretchColumns="1">
 
+    <TextView
+        android:text="Thêm nhân viên"
+        android:textSize="25dp"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <TableRow
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
