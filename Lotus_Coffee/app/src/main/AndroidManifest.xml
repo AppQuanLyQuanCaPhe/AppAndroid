@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -32,13 +32,15 @@
             android:name=".MainAdminActivity"
             android:label="@string/title_activity_main" />
         <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".DangKyActivity">
+        <activity android:name=".DangKyActivity"></activity>
+        <activity android:name=".HoaDonActivity"></activity>
+        <activity android:name=".NhanvienActivity" />
+        <activity
+            android:name=".UpdateNVActivity"
+            android:label="@string/title_activity_update_nv"
+            android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".HoaDonActivity">
-
-        </activity>
-        <activity android:name=".NhanvienActivity"/>
     </application>
 
 </manifest>

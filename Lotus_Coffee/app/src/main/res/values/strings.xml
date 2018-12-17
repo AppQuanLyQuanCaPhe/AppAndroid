@@ -11,4 +11,5 @@
     <string name="forgot_password_msg">Chúng tôi cần Email đã đăng ký của bạn để gửi cho bạn hướng dẫn đặt lại mật khẩu.</string>
     <string name="hint_email">Email</string>
     <string name="btn_reset_password">Khôi phục mật khẩu</string>
+    <string name="title_activity_update_nv">Cập nhật nhân viên</string>
 </resources>

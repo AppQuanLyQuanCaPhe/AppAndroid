@@ -1,6 +1,9 @@
 package com.example.lotuscoffeeapp;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,6 +13,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -93,6 +97,23 @@ public class HoaDonActivity extends AppCompatActivity {
                 startActivity(intent);
 
            }
+        });
+
+        lvHoaDon.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                AlertDialog.Builder dialog=new AlertDialog.Builder(HoaDonActivity.this);
+                dialog.setIcon(android.R.drawable.ic_dialog_info);
+                dialog.setTitle("Thông tin");
+                dialog.setMessage("Hiện chi tiết hóa đơn số: "+position+1+" (Tính năng đang phát triển)");
+                dialog.setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
         });
 
     }
