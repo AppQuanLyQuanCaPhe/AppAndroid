@@ -140,7 +140,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/ic_account_box_black_24dp"/>
+                    android:src="@drawable/ic_account_box_black_24dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -219,7 +219,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/logout_50"/>
+                    android:src="@drawable/logout_50" />
 
                 <TextView
                     android:layout_width="wrap_content"
