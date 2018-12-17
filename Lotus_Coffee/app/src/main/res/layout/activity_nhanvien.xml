@@ -27,20 +27,6 @@
             android:text="Thêm"
             android:backgroundTint="@color/blue"
             android:textColor="@color/White"/>
-        <Button
-            android:id="@+id/Btn_XoaNV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/red"
-            android:textColor="@color/White"
-            android:text="Xóa"/>
-        <Button
-            android:id="@+id/Btn_LuuNV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:textColor="@color/White"
-            android:text="Lưu"/>
 
     </TableRow>
     <ListView

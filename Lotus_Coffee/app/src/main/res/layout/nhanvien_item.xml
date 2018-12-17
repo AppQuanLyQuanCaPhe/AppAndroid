@@ -10,14 +10,6 @@
     android:background="#fdf0f0"
     >
     <TableRow
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content">
-        <CheckBox android:id="@+id/checkbox_itemNV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onCheckboxClicked"/>
-    </TableRow>
-    <TableRow
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <TextView

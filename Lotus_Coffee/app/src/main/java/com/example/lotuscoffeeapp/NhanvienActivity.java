@@ -1,5 +1,7 @@
 package com.example.lotuscoffeeapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -54,6 +56,40 @@ public class NhanvienActivity extends AppCompatActivity {
                 startActivity(new Intent(NhanvienActivity.this,DangKyActivity.class));
             }
         });
+        lvNhanVien.setLongClickable(true);
+
+        lvNhanVien.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(NhanvienActivity.this);
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+                builder1.setMessage("Bạn có muốn xóa không ?");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Có",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                database.delete("NhanVien","MaNV="+NhanVienList.get(position).getMaNV(),null);
+                                database.delete("TaiKhoan","MaNV="+NhanVienList.get(position).getMaNV(),null);
+                                adapter.remove(NhanVienList.get(position));
+                                adapter.notifyDataSetChanged();
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "Không",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+                return true;
+            }
+        });
+
 
     }
     private void GetDataNhanVien(){
