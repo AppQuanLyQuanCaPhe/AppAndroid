@@ -118,16 +118,13 @@ public class OrderActivity extends AppCompatActivity {
     }
 
     private void getDataHoaDon(int i) {
-        Random r=new Random();
-        int[] hinhanh={R.drawable.hinh1,R.drawable.hinh2,R.drawable.hinh3,R.drawable.hinh4};
         Cursor cursor=database.rawQuery("SELECT t.MaMon,t.TenMon,t.Gia,t.AnhMon FROM ThucDon t,TamTinh tt Where t.MaMon=tt.MaMon AND tt.MaBan="+i,null);
         while (cursor.moveToNext()){
             ThucDon td=new ThucDon();
             td.setMaMon(cursor.getInt(0));
             td.setTenMon(cursor.getString(1));
             td.setGia(cursor.getString(2));
-            int hinh=r.nextInt(4);
-            td.setHinhAnh(hinhanh[hinh]);
+            td.setHinhAnh(cursor.getInt(3));
             HoaDonList.add(td);
         }
     }
@@ -274,13 +271,14 @@ public class OrderActivity extends AppCompatActivity {
 
     private void getdataTopping() {
         ToppingList.add("Thêm...");
-        Cursor cursor=database.rawQuery("SELECT MaMon,TenMon,Gia FROM ThucDon WHERE MaLoai=4",null);
+        Cursor cursor=database.rawQuery("SELECT MaMon,TenMon,Gia,AnhMon FROM ThucDon WHERE MaLoai=4",null);
         for (int i=0;i<cursor.getCount();i++){
             cursor.moveToPosition(i);
             ThucDon td=new ThucDon();
             td.setMaMon(cursor.getInt(0));
             td.setTenMon(cursor.getString(1));
             td.setGia(cursor.getString(2));
+            td.setHinhAnh(cursor.getInt(3));
             ThucdonList.add(td);
             ToppingList.add(cursor.getString(1));
         }

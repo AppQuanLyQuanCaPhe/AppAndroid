@@ -20,7 +20,6 @@ public class MainAdminActivity extends Activity {
         Toast.makeText(this, ""+tk.getTendangnhap()+" "+tk.getMachucvu()+" "+tk.getManv(), Toast.LENGTH_SHORT).show();
 
 
-
     }
 
 }

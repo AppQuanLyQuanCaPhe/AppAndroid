@@ -84,6 +84,7 @@ public class ThanhToanActivity extends AppCompatActivity {
 
                         ContentValues contentValues=new ContentValues();
                         contentValues.put("MaBan",MaBan);
+                        contentValues.put("MaNV",tk.getManv());
                         contentValues.put("NgayLap",Ngay);
                         contentValues.put("ThanhTien",Tong);
 
