@@ -14,7 +14,7 @@ public class NhanvienActivity extends AppCompatActivity {
 
     SQLiteDatabase database;
     NhanVienApdapter adapter;
-    ArrayList<NhanVien> NhanVienList;
+    List<NhanVien> NhanVienList;
     ListView lvNhanVien;
 
     @Override
@@ -23,7 +23,7 @@ public class NhanvienActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nhanvien);
         database=Database.initDatabase(NhanvienActivity.this,MainActivity.DATABASE_NAME);
         lvNhanVien=(ListView) findViewById(R.id.ListViewNhanVien);
-        NhanVienList=new ArrayList<NhanVien>();
+        NhanVienList=new ArrayList<>();
         adapter=new NhanVienApdapter(NhanvienActivity.this,android.R.layout.simple_list_item_1,NhanVienList);
         lvNhanVien.setAdapter(adapter);
         GetDataNhanVien();
@@ -40,7 +40,7 @@ public class NhanvienActivity extends AppCompatActivity {
             td.setEmail(cursor.getString(4));
             td.setDiaChi(cursor.getString(5));
             NhanVienList.add(td);
+            adapter.notifyDataSetChanged();
         }
-        adapter.notifyDataSetChanged();
     }
 }
