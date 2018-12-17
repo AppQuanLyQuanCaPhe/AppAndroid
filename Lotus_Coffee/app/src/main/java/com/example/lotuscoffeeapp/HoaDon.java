@@ -1,26 +1,22 @@
 package com.example.lotuscoffeeapp;
 
 public class HoaDon {
-    private int MaHD;
-    private int MaBan;
+    private String MaBan;
     private String NgayLap;
-    private int Tien;
+    private String Tien;
 
     public HoaDon() {
     }
 
-    public HoaDon(int maHD, int maBan, String ngayLap, int tien) {
-        MaHD = maHD;
+    public HoaDon(String maBan, String ngayLap, String tien) {
+
         MaBan = maBan;
         NgayLap = ngayLap;
         Tien = tien;
     }
 
-    public int getMaHD() {
-        return MaHD;
-    }
 
-    public int getMaBan() {
+    public String getMaBan() {
         return MaBan;
     }
 
@@ -28,15 +24,12 @@ public class HoaDon {
         return NgayLap;
     }
 
-    public int getTien() {
+    public String getTien() {
         return Tien;
     }
 
-    public void setMaHD(int maHD) {
-        MaHD = maHD;
-    }
 
-    public void setMaBan(int maBan) {
+    public void setMaBan(String maBan) {
         MaBan = maBan;
     }
 
@@ -44,12 +37,12 @@ public class HoaDon {
         NgayLap = ngayLap;
     }
 
-    public void setTien(int tien) {
+    public void setTien(String tien) {
         Tien = tien;
     }
-
-    @Override
-    public String toString() {
-        return "Tien=" + Tien;
+    public String toString ()
+    {
+        return ( getMaBan() + getNgayLap() +getTien() );
     }
+
 }
