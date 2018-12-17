@@ -2,6 +2,7 @@ package com.example.lotuscoffeeapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -89,7 +90,7 @@ public class DangKyActivity extends AppCompatActivity {
                     db.insert("TaiKhoan", null, va);
 
                     Toast.makeText(DangKyActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
-                    // chuyển sang trang xem Nhân viên (ghi sau )
+                    startActivity(new Intent(DangKyActivity.this,NhanvienActivity.class));
 
                 }
                 else

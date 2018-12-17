@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                     //Kết thúc*/
 
                     //Xoa khi release
-                    int kt=1;
+                    int kt=0;
                     tk=new TaiKhoan();
                     tk.setTendangnhap("NV_1");
                     tk.setMatkhau("hahahha");

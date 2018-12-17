@@ -48,10 +48,8 @@ public class HoaDonActivity extends AppCompatActivity {
 
     ListView lvHoaDon;
     Button btnRedo;
-    SQLiteDatabase database;
 
     TaiKhoan tk;
-//    String test;
     List<HoaDon> hoadonlist = new ArrayList<HoaDon>();
     HoaDonAdapter adapter = null;
 
@@ -67,11 +65,13 @@ public class HoaDonActivity extends AppCompatActivity {
         SQLiteDatabase db = Database.initDatabase(HoaDonActivity.this, MainActivity.DATABASE_NAME);
         Cursor cursor = db.rawQuery("select * from  HoaDon ",null);
 
-        HoaDon hd = new HoaDon();
+        Intent intent=getIntent();
+        Bundle bundle=intent.getExtras();
+        tk=new TaiKhoan();
+        tk= (TaiKhoan) bundle.getSerializable("TAIKHOAN");
 
         while (cursor.moveToNext()) {
-//            test ="bàn:"+cursor.getString(1)+"| Ngày:"+cursor.getString(2)+" | Tiền:"+cursor.getString(3);
-//            arrayHoaDon.add(new HoaDon(cursor.getString(0),cursor.getString(3),cursor.getString(2)));
+            HoaDon hd = new HoaDon();
             hd.setMaBan(cursor.getString(1));
             hd.setNgayLap(cursor.getString(3));
             hd.setTien(cursor.getString(4));
@@ -81,18 +81,16 @@ public class HoaDonActivity extends AppCompatActivity {
         adapter = new HoaDonAdapter();
 
         lvHoaDon.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
 
         btnRedo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
-            Intent intent=new Intent(HoaDonActivity.this,MainAdminActivity.class);
-            Bundle bundle=new Bundle();
-            bundle.putSerializable("TAIKHOAN",tk);
-            intent.putExtras(bundle);
-            startActivity(intent);
+                Intent intent=new Intent(HoaDonActivity.this,MainAdminActivity.class);
+                Bundle bundle=new Bundle();
+                bundle.putSerializable("TAIKHOAN",tk);
+                intent.putExtras(bundle);
+                startActivity(intent);
 
            }
         });

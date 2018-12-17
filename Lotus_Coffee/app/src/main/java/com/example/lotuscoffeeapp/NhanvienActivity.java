@@ -11,36 +11,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NhanvienActivity extends AppCompatActivity {
-
-    SQLiteDatabase database;
-    NhanVienApdapter adapter;
-    ArrayList<NhanVien> NhanVienList;
-    ListView lvNhanVien;
+//
+//    SQLiteDatabase database;
+//    NhanVienApdapter adapter;
+//    ArrayList<NhanVien> NhanVienList;
+//    ListView lvNhanVien;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nhanvien);
-        database=Database.initDatabase(NhanvienActivity.this,MainActivity.DATABASE_NAME);
-        lvNhanVien=(ListView) findViewById(R.id.ListViewNhanVien);
-        NhanVienList=new ArrayList<NhanVien>();
-        adapter=new NhanVienApdapter(NhanvienActivity.this,android.R.layout.simple_list_item_1,NhanVienList);
-        lvNhanVien.setAdapter(adapter);
-        GetDataNhanVien();
+//        database=Database.initDatabase(NhanvienActivity.this,MainActivity.DATABASE_NAME);
+//        lvNhanVien=(ListView) findViewById(R.id.ListViewNhanVien);
+//        NhanVienList=new ArrayList<NhanVien>();
+//        adapter=new NhanVienApdapter(NhanvienActivity.this,android.R.layout.simple_list_item_1,NhanVienList);
+//        lvNhanVien.setAdapter(adapter);
+//        GetDataNhanVien();
     }
-    private void GetDataNhanVien(){
-        Cursor cursor=database.rawQuery("SELECT * FROM NhanVien",null);
-
-        while (cursor.moveToNext()){
-            NhanVien td=new NhanVien();
-            td.setMaNV(cursor.getInt(0));
-            td.setHoTen(cursor.getString(1));
-            td.setSDT(cursor.getString(2));
-            td.setNgaySinh(cursor.getString(3));
-            td.setEmail(cursor.getString(4));
-            td.setDiaChi(cursor.getString(5));
-            NhanVienList.add(td);
-        }
-        adapter.notifyDataSetChanged();
-    }
+//    private void GetDataNhanVien(){
+//        Cursor cursor=database.rawQuery("SELECT * FROM NhanVien",null);
+//
+//        while (cursor.moveToNext()){
+//            NhanVien td=new NhanVien();
+//            td.setMaNV(cursor.getInt(0));
+//            td.setHoTen(cursor.getString(1));
+//            td.setSDT(cursor.getString(2));
+//            td.setNgaySinh(cursor.getString(3));
+//            td.setEmail(cursor.getString(4));
+//            td.setDiaChi(cursor.getString(5));
+//            NhanVienList.add(td);
+//        }
+//        adapter.notifyDataSetChanged();
+//    }
 }
