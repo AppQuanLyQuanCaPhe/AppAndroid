@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        edtEmail = (EditText) findViewById(R.id.edtEmail);
+        //edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtTenDangNhap=(EditText) findViewById(R.id.editTextTenDangNhap);
         edtMatKhau=(EditText) findViewById(R.id.editTextMatKhau);
         btnDangNhap=(Button) findViewById(R.id.buttonLogin);
@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                     //Kết thúc*/
 
                     //Xoa khi release
-                    int kt=0;
+                    int kt=1;
                     tk=new TaiKhoan();
                     tk.setTendangnhap("NV_1");
                     tk.setMatkhau("hahahha");
@@ -107,4 +107,6 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
+
 }

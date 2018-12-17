@@ -7,6 +7,7 @@ public class ThucDon implements Serializable {
     private String TenMon;
     private String Gia;
     private int HinhAnh;
+    private int MaLoai;
 
     public void setMaMon(int maMon) {
         MaMon = maMon;
@@ -39,6 +40,15 @@ public class ThucDon implements Serializable {
 
     public int getHinhAnh() {
         return HinhAnh;
+    }
+
+    public int getMaLoai() {
+        return MaLoai;
+    }
+
+    public void setMaLoai(int maLoai) {
+
+        MaLoai = maLoai;
     }
 
     @Override
