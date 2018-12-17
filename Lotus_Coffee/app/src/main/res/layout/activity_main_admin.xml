@@ -140,12 +140,12 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/ic_account_balance_black_24dp" />
+                    android:src="@drawable/menu_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tình trạng kho"
+                    android:text="Thực đơn"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="16dp"

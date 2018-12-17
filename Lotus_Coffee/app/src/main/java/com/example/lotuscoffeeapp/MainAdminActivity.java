@@ -50,6 +50,7 @@ public class MainAdminActivity extends Activity {
                             break;
                         case 2:
                             Toast.makeText(MainAdminActivity.this, "Tính năng đang phát triển", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(MainAdminActivity.this,Update_TD_Activity.class));
                             break;
                         case 3:
                             startActivity(new Intent(MainAdminActivity.this,LoginActivity.class));
