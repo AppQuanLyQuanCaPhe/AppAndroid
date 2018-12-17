@@ -61,6 +61,7 @@ public class OrderActivity extends AppCompatActivity {
 
         ThucdonList=new ArrayList<>();
         HoaDonList=new ArrayList<>();
+        //getFullHoaDon();
         getDataHoaDon(MaBan);
         TongHoaDonDau=HoaDonList.size();
         Log.d("OrderActivity","TongHoaDon:"+TongHoaDonDau);
@@ -127,6 +128,18 @@ public class OrderActivity extends AppCompatActivity {
             td.setGia(cursor.getString(2));
             int hinh=r.nextInt(4);
             td.setHinhAnh(hinhanh[hinh]);
+            HoaDonList.add(td);
+        }
+    }
+
+    private void getFullHoaDon() {
+        Cursor cursor=database.rawQuery("SELECT MaMon,TenMon,Gia,AnhMon FROM ThucDon",null);
+        while (cursor.moveToNext()){
+            ThucDon td=new ThucDon();
+            td.setMaMon(cursor.getInt(0));
+            td.setTenMon(cursor.getString(1));
+            td.setGia(cursor.getString(2));
+            td.setHinhAnh(Integer.valueOf(cursor.getString(3)));
             HoaDonList.add(td);
         }
     }
@@ -229,13 +242,14 @@ public class OrderActivity extends AppCompatActivity {
     }
 
     private void getdataMon(int position) {
-        Cursor cursor=database.rawQuery("SELECT MaMon,TenMon,Gia FROM ThucDon WHERE MaLoai="+position,null);
+        Cursor cursor=database.rawQuery("SELECT MaMon,TenMon,Gia,AnhMon FROM ThucDon WHERE MaLoai="+position,null);
         for (int i=0;i<cursor.getCount();i++){
             cursor.moveToPosition(i);
             ThucDon td=new ThucDon();
             td.setMaMon(cursor.getInt(0));
             td.setTenMon(cursor.getString(1));
             td.setGia(cursor.getString(2));
+            td.setHinhAnh(cursor.getInt(3));
             ThucdonList.add(td);
             MonList.add(cursor.getString(1));
         }
@@ -244,13 +258,14 @@ public class OrderActivity extends AppCompatActivity {
 
     private void getdataDoAn() {
         DoAnList.add("Chọn đồ ăn...");
-        Cursor cursor=database.rawQuery("SELECT MaMon,TenMon,Gia FROM ThucDon WHERE MaLoai=5",null);
+        Cursor cursor=database.rawQuery("SELECT MaMon,TenMon,Gia,AnhMon FROM ThucDon WHERE MaLoai=5",null);
         for (int i=0;i<cursor.getCount();i++){
             cursor.moveToPosition(i);
             ThucDon td=new ThucDon();
             td.setMaMon(cursor.getInt(0));
             td.setTenMon(cursor.getString(1));
             td.setGia(cursor.getString(2));
+            td.setHinhAnh(cursor.getInt(3));
             ThucdonList.add(td);
             DoAnList.add(cursor.getString(1));
         }

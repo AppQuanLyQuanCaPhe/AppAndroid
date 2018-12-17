@@ -14,7 +14,7 @@
         android:layout_height="250dp"
         android:background="@color/colorPrimary" />
 
-    <TableRow
+    <!--<TableRow
         android:layout_marginTop="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/hint_email" />
-    </TableRow>
+    </TableRow>-->
     <TableRow
         android:layout_marginTop="8dp"
         android:layout_width="wrap_content"
