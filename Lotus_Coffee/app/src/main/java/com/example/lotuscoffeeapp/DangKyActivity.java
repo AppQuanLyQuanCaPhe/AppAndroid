@@ -90,7 +90,7 @@ public class DangKyActivity extends AppCompatActivity {
 
                     Toast.makeText(DangKyActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
                     // chuyển sang trang xem Nhân viên (ghi sau )
-                    
+
                 }
                 else
                 {
